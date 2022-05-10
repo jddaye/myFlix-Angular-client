@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 @Component({
@@ -9,7 +9,13 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class ActorViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    @Inject(MAT_DIALOG_DATA)
+    public data: {
+      Name: string,
+      Movie: string,
+    }
+  ) { }
 
   ngOnInit(): void {
   }

@@ -23,8 +23,9 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { GenreViewComponent } from './genre-view/genre-view.component';
 import { DirectorViewComponent } from './director-view/director-view.component';
 import { ActorViewComponent } from './actor-view/actor-view.component';
-import { SynopsisViewComponent } from '../synopsis-view/synopsis-view.component';
+import { SynopsisViewComponent } from './synopsis-view/synopsis-view.component';
 import { UserProfileViewComponent } from './user-profile-view/user-profile-view.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -46,6 +47,7 @@ const appRoutes: Routes = [
     ActorViewComponent,
     SynopsisViewComponent,
     UserProfileViewComponent,
+    UserEditComponent
   ],
 
   imports: [
