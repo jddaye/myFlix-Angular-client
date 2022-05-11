@@ -11,7 +11,7 @@ import { SynopsisViewComponent } from '../synopsis-view/synopsis-view.component'
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
-  styleUrls: ['./movie-card.component.scss']
+  styleUrls: ['./movie-card.component.css']
 })
 export class MovieCardComponent {
   movies: any[] = [];
@@ -23,7 +23,7 @@ export class MovieCardComponent {
 
 ngOnInit(): void {
   this.getMovies();
-  this.getGenres();
+  this.getGenre();
 }
 
 getMovies(): void {
@@ -34,8 +34,8 @@ getMovies(): void {
     });
   }
 
-getGenres(): void {
-  this.fetchApiData.getGenres().subscribe((resp: any) => {
+getGenre(): void {
+  this.fetchApiData.getGenre().subscribe((resp: any) => {
       this.genres = resp;
       console.log(this.genres);
       return this.genres;

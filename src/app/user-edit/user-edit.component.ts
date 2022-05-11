@@ -8,7 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 @Component({
   selector: 'app-user-edit',
   templateUrl: './user-edit.component.html',
-  styleUrls: ['./user-edit.component.scss']
+  styleUrls: ['./user-edit.component.css']
 })
 export class UserEditComponent implements OnInit {
   Username = localStorage.getItem('user');
@@ -34,7 +34,7 @@ export class UserEditComponent implements OnInit {
 
   getUser(): void {
     const user = localStorage.getItem('user');
-    this.fetchApiData.getUser(user).subscribe((resp: any) => {
+    this.fetchApiData.getUserProfile().subscribe((resp: any) => {
       this.user = resp;
       console.log(this.user);
       return this.user
