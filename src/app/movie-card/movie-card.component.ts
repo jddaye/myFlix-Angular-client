@@ -11,7 +11,7 @@ import { SynopsisViewComponent } from '../synopsis-view/synopsis-view.component'
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
-  styleUrls: ['./movie-card.component.scss']
+  styleUrls: ['./movie-card.component.css']
 })
 export class MovieCardComponent {
   movies: any[] = [];
