@@ -1,6 +1,8 @@
 <mat-card>
-    <mat-card-title>{{ data.Name }}</mat-card-title><br>
-    <mat-dialog-content><b>Movie:</b> {{ data.Movie }}</mat-dialog-content><br>
+    <!-- <mat-card-title>{{ data.Name }}</mat-card-title><br>
+    <mat-dialog-content><b>Movie:</b> {{ data.Movie }}</mat-dialog-content><br> -->
+    <mat-card-title> Actors </mat-card-title>
+    <mat-dialog-content>{{ data.Actors.join(", ") }}</mat-dialog-content>
     <mat-card-actions>
       <button 
         mat-stroked-button 
