@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 //Declaring the api url that will provide data for the client app
-const apiUrl = 'https://myflyx.herokuapp.com';
+const apiUrl = 'https://myflyx.herokuapp.com/';
 
 @Injectable({
   providedIn: 'root',
@@ -66,10 +66,10 @@ export class FetchApiDataService {
   }
 
   //Get SPECIFIC genre
-  getGenre(): Observable<any> {
+  getGenre(Name: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
-      .get(apiUrl + 'movies/genre/:Name', {
+      .get(apiUrl + 'genres/' + Name, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),

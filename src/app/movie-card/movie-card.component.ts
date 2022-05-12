@@ -6,6 +6,7 @@ import { GenreViewComponent } from '../genre-view/genre-view.component';
 import { DirectorViewComponent } from '../director-view/director-view.component';
 import { ActorViewComponent } from '../actor-view/actor-view.component';
 import { SynopsisViewComponent } from '../synopsis-view/synopsis-view.component';
+import { Data } from '@angular/router';
 
 
 @Component({
@@ -13,6 +14,13 @@ import { SynopsisViewComponent } from '../synopsis-view/synopsis-view.component'
   templateUrl: './movie-card.component.html',
   styleUrls: ['./movie-card.component.css']
 })
+
+// interface Genre {
+//   _id: string
+//    Name: string;
+//    Description: string;
+//  }
+
 export class MovieCardComponent {
   movies: any[] = [];
   genres: any[] = [];
@@ -23,7 +31,7 @@ export class MovieCardComponent {
 
 ngOnInit(): void {
   this.getMovies();
-  this.getGenre();
+  // this.getGenre();
 }
 
 getMovies(): void {
@@ -34,31 +42,31 @@ getMovies(): void {
     });
   }
 
-getGenre(): void {
-  this.fetchApiData.getGenre().subscribe((resp: any) => {
+getGenre(Name: string): any {
+  this.fetchApiData.getGenre(Name).subscribe((resp: any) => {
       this.genres = resp;
       console.log(this.genres);
       return this.genres;
     });
 }
 
-openGenre(id: string): void {
+openGenre(Name: string): void {
   let name;
-  let description;
-  console.log(id);
+  // const genre = this.getGenre(Name)
+  // console.log(genre);
 
-  for(let i=0; i<this.genres.length; i ++) {
-    console.log(this.genres[i]._id)
-      if (this.genres[i]._id == id) {
-        name = this.genres[i].Name;
-        description = this.genres[i].Description;
-        break;
-      }
-  }
+  // for(let i=0; i<this.genres.length; i ++) {
+  //   console.log(this.genres[i]._id)
+  //     if (this.genres[i]._id == id) {
+  //       name = this.genres[i].Name;
+  //       description = this.genres[i].Description;
+  //       break;
+  //     }
+  // }
   this.dialog.open(GenreViewComponent, {
     data: {
-      Name: name,
-      Description: description,
+      Name: Name,
+      // Description: genre.Description,
     },
     width: '500px',
     backdropClass: 'backdropBackground'
@@ -77,11 +85,10 @@ openDirector(name: string, bio: string, movies: string): void {
   });
 }
 
-openActor(name: string, movies: string): void {
+openActor(Actors: []): void {
   this.dialog.open(ActorViewComponent, {
     data: {
-      Name: name,
-      Movies: movies,
+      Actors
     },
     width: '500px',
     backdropClass: 'backdropBackground'

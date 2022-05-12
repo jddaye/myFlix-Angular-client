@@ -37,6 +37,7 @@ loginUser(): void {
       localStorage.setItem('user', result.user.Username);
       localStorage.setItem('token', result.token);
      this.dialogRef.close(); // This will close the modal on success!
+     this.router.navigate(['movies']); 
      console.log(result);
      this.snackBar.open(result, 'OK', {
         duration: 2000

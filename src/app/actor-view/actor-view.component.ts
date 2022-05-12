@@ -12,8 +12,7 @@ export class ActorViewComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
-      Name: string,
-      Movie: string,
+      Actors: []
     }
   ) { }
 
