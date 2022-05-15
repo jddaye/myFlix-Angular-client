@@ -21,7 +21,11 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+  },
+  "typedocOptions": {
+    "entryPoints": ["src/app.component.ts"],
+    "out": "docs"
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
